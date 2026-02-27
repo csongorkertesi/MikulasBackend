@@ -18,6 +18,7 @@ const children_service_1 = require("./children.service");
 const create_child_dto_1 = require("./dto/create-child.dto");
 const update_child_dto_1 = require("./dto/update-child.dto");
 const swagger_1 = require("@nestjs/swagger");
+const child_entity_1 = require("./entities/child.entity");
 let ChildrenController = class ChildrenController {
     childrenService;
     constructor(childrenService) {
@@ -49,7 +50,7 @@ exports.ChildrenController = ChildrenController;
 __decorate([
     (0, common_1.Post)(),
     (0, swagger_1.ApiOperation)({ summary: 'Create a new child' }),
-    (0, swagger_1.ApiResponse)({ status: 201, description: 'Child successfully created' }),
+    (0, swagger_1.ApiResponse)({ status: 201, description: 'Child successfully created', type: child_entity_1.Child }),
     (0, swagger_1.ApiResponse)({ status: 400, description: 'Bad request' }),
     (0, swagger_1.ApiBody)({ type: create_child_dto_1.CreateChildDto }),
     __param(0, (0, common_1.Body)()),
@@ -60,7 +61,7 @@ __decorate([
 __decorate([
     (0, common_1.Get)(),
     (0, swagger_1.ApiOperation)({ summary: 'Get all children' }),
-    (0, swagger_1.ApiResponse)({ status: 200, description: 'List of all children' }),
+    (0, swagger_1.ApiResponse)({ status: 200, description: 'List of all children', type: [child_entity_1.Child] }),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", void 0)
@@ -69,7 +70,7 @@ __decorate([
     (0, common_1.Get)(':id'),
     (0, swagger_1.ApiOperation)({ summary: 'Get a child by ID' }),
     (0, swagger_1.ApiParam)({ name: 'id', type: 'number', description: 'Child ID' }),
-    (0, swagger_1.ApiResponse)({ status: 200, description: 'Child found' }),
+    (0, swagger_1.ApiResponse)({ status: 200, description: 'Child found', type: child_entity_1.Child }),
     (0, swagger_1.ApiResponse)({ status: 404, description: 'Child not found' }),
     __param(0, (0, common_1.Param)('id')),
     __metadata("design:type", Function),
@@ -81,7 +82,7 @@ __decorate([
     (0, swagger_1.ApiOperation)({ summary: 'Update a child' }),
     (0, swagger_1.ApiParam)({ name: 'id', type: 'number', description: 'Child ID' }),
     (0, swagger_1.ApiBody)({ type: update_child_dto_1.UpdateChildDto }),
-    (0, swagger_1.ApiResponse)({ status: 200, description: 'Child successfully updated' }),
+    (0, swagger_1.ApiResponse)({ status: 200, description: 'Child successfully updated', type: child_entity_1.Child }),
     (0, swagger_1.ApiResponse)({ status: 404, description: 'Child not found' }),
     __param(0, (0, common_1.Param)('id')),
     __param(1, (0, common_1.Body)()),

@@ -7,27 +7,27 @@ export declare class ChildrenService {
     create(data: CreateChildDto): Promise<any>;
     findAll(): Promise<{
         name: string;
+        id: number;
         address: string;
         good: boolean;
-        id: number;
     }[]>;
     findOne(id: number): Promise<{
         name: string;
+        id: number;
         address: string;
         good: boolean;
-        id: number;
     }>;
     update(id: number, data: UpdateChildDto): Promise<{
         name: string;
+        id: number;
         address: string;
         good: boolean;
-        id: number;
     }>;
     remove(id: number): Promise<{
         name: string;
+        id: number;
         address: string;
         good: boolean;
-        id: number;
     }>;
     linkToy(id: number, toyId: number): Promise<{
         name: string;

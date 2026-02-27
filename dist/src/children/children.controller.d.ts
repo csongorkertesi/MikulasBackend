@@ -6,39 +6,39 @@ export declare class ChildrenController {
     constructor(childrenService: ChildrenService);
     create(createChildDto: CreateChildDto): Promise<any>;
     findAll(): Promise<{
+        id: number;
         name: string;
         address: string;
         good: boolean;
-        id: number;
     }[]>;
     findOne(id: string): Promise<{
+        id: number;
         name: string;
         address: string;
         good: boolean;
-        id: number;
     }>;
     update(id: string, updateChildDto: UpdateChildDto): Promise<{
+        id: number;
         name: string;
         address: string;
         good: boolean;
-        id: number;
     }>;
     remove(id: string): Promise<{
+        id: number;
         name: string;
         address: string;
         good: boolean;
-        id: number;
     }>;
     linkToy(id: string, toyId: string): Promise<{
-        name: string;
         id: number;
+        name: string;
         material: import("../../generated/prisma/enums").Material;
         weight: number;
         childId: number | null;
     }>;
     removeToy(id: string, toyId: string): Promise<{
-        name: string;
         id: number;
+        name: string;
         material: import("../../generated/prisma/enums").Material;
         weight: number;
         childId: number | null;

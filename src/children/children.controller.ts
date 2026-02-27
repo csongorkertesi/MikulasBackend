@@ -3,6 +3,7 @@ import { ChildrenService } from './children.service';
 import { CreateChildDto } from './dto/create-child.dto';
 import { UpdateChildDto } from './dto/update-child.dto';
 import { ApiTags, ApiOperation, ApiResponse, ApiParam, ApiBody } from '@nestjs/swagger';
+import { Child } from './entities/child.entity';
 
 @ApiTags('children')
 @Controller('children')
@@ -11,7 +12,7 @@ export class ChildrenController {
 
   @Post()
   @ApiOperation({ summary: 'Create a new child' })
-  @ApiResponse({ status: 201, description: 'Child successfully created' })
+  @ApiResponse({ status: 201, description: 'Child successfully created', type: Child })
   @ApiResponse({ status: 400, description: 'Bad request' })
   @ApiBody({ type: CreateChildDto })
   create(@Body() createChildDto: CreateChildDto) {
@@ -20,7 +21,7 @@ export class ChildrenController {
 
   @Get()
   @ApiOperation({ summary: 'Get all children' })
-  @ApiResponse({ status: 200, description: 'List of all children' })
+  @ApiResponse({ status: 200, description: 'List of all children', type: [Child] })
   findAll() {
     return this.childrenService.findAll();
   }
@@ -28,7 +29,7 @@ export class ChildrenController {
   @Get(':id')
   @ApiOperation({ summary: 'Get a child by ID' })
   @ApiParam({ name: 'id', type: 'number', description: 'Child ID' })
-  @ApiResponse({ status: 200, description: 'Child found' })
+  @ApiResponse({ status: 200, description: 'Child found', type: Child })
   @ApiResponse({ status: 404, description: 'Child not found' })
   findOne(@Param('id') id: string) {
     return this.childrenService.findOne(+id);
@@ -38,7 +39,7 @@ export class ChildrenController {
   @ApiOperation({ summary: 'Update a child' })
   @ApiParam({ name: 'id', type: 'number', description: 'Child ID' })
   @ApiBody({ type: UpdateChildDto })
-  @ApiResponse({ status: 200, description: 'Child successfully updated' })
+  @ApiResponse({ status: 200, description: 'Child successfully updated', type: Child })
   @ApiResponse({ status: 404, description: 'Child not found' })
   update(@Param('id') id: string, @Body() updateChildDto: UpdateChildDto) {
     return this.childrenService.update(+id, updateChildDto);

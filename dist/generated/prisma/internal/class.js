@@ -43,7 +43,7 @@ const config = {
             "value": "prisma-client"
         },
         "output": {
-            "value": "D:\\Iskola\\Web\\Mikulas\\MikulasBackend-main\\generated\\prisma",
+            "value": "D:\\Iskola\\Web\\Mikulas\\MikulasBackend\\generated\\prisma",
             "fromEnvVar": null
         },
         "config": {
@@ -58,7 +58,7 @@ const config = {
             }
         ],
         "previewFeatures": [],
-        "sourceFilePath": "D:\\Iskola\\Web\\Mikulas\\MikulasBackend-main\\prisma\\schema.prisma",
+        "sourceFilePath": "D:\\Iskola\\Web\\Mikulas\\MikulasBackend\\prisma\\schema.prisma",
         "isCustomOutput": true
     },
     "relativePath": "../../prisma",

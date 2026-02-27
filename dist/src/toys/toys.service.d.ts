@@ -6,37 +6,37 @@ export declare class ToysService {
     constructor(prismaService: PrismaService);
     create(data: CreateToyDto): Promise<{
         name: string;
+        id: number;
         material: import("../../generated/prisma/enums").Material;
         weight: number;
         childId: number | null;
-        id: number;
     }>;
     findAll(): Promise<{
         name: string;
+        id: number;
         material: import("../../generated/prisma/enums").Material;
         weight: number;
         childId: number | null;
-        id: number;
     }[]>;
     findOne(id: number): Promise<{
         name: string;
+        id: number;
         material: import("../../generated/prisma/enums").Material;
         weight: number;
         childId: number | null;
-        id: number;
     }>;
     update(id: number, data: UpdateToyDto): Promise<{
         name: string;
+        id: number;
         material: import("../../generated/prisma/enums").Material;
         weight: number;
         childId: number | null;
-        id: number;
     }>;
     remove(id: number): Promise<{
         name: string;
+        id: number;
         material: import("../../generated/prisma/enums").Material;
         weight: number;
         childId: number | null;
-        id: number;
     }>;
 }
